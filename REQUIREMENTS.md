@@ -3,19 +3,19 @@
 ## Functional Requirements
 
 ### User Management
-- [ ] User can create an account
-- [ ] User can be identified between requests
+- [x] User can create an account
+- [x] User can be identified between requests
 - [ ] User can only view, edit, and delete meals they created
 
 ### Meal Management
-- [ ] User can register a meal with the following information:
-  - [ ] Name
-  - [ ] Description
-  - [ ] Date and time
-  - [ ] Whether it's within the diet or not
+- [x] User can register a meal with the following information:
+  - [x] Name
+  - [x] Description
+  - [x] Date and time
+  - [x] Whether it's within the diet or not
 - [ ] User can edit a meal (all information can be modified)
 - [ ] User can delete a meal
-- [ ] User can list all their meals
+- [x] User can list all their meals
 - [ ] User can view a single meal details
 
 ### Metrics
@@ -27,27 +27,19 @@
 
 ## Business Rules
 
-- [ ] A meal must be associated with a user
+- [x] A meal must be associated with a user
 - [ ] Users can only manage their own meals
-- [ ] All meal fields are required when creating a meal
+- [x] All meal fields are required when creating a meal
 - [ ] The best sequence is calculated by consecutive meals within the diet
-- [ ] Meals must be identified by a unique ID
-- [ ] Authentication/identification must persist between requests
+- [x] Meals must be identified by a unique ID
+- [x] Authentication/identification must persist between requests
 
 ## Technical Requirements
 
-- [ ] Use Node.js with Fastify framework
-- [ ] Use TypeScript
+- [x] Use Node.js with Fastify framework
+- [x] Use TypeScript
 - [ ] Database should be chosen by the developer
 - [ ] Follow REST API best practices
 - [ ] Implement proper error handling
-- [ ] Add input validation
+- [x] Add input validation
 - [ ] Include automated tests (optional but recommended)
-
-## Non-Functional Requirements
-
-- [ ] Code must be well organized and maintainable
-- [ ] Follow clean code principles
-- [ ] Use proper HTTP status codes
-- [ ] API responses should be in JSON format
-- [ ] Implement proper logging
