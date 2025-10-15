@@ -1,0 +1,31 @@
+{
+  "name": "api-daily-diet",
+  "version": "1.0.0",
+  "description": "A REST API for managing daily diet meals with user authentication and metrics tracking",
+  "author": "Hurick Krügner",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "node --watch src/server.ts",
+    "test": "vitest",
+    "build": "tsup",
+    "clear": "rm -rf node_modules && npm install",
+    "clear:r": "rm -rf node_modules && npm install && npm run dev"
+  },
+  "engines": {
+    "node": "22.x",
+    "npm": "11.x"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.0.2",
+    "dotenv": "17.2.3",
+    "fastify": "5.6.1",
+    "knex": "3.1.0",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "24.7.2",
+    "sqlite3": "5.1.7"
+  }
+}
