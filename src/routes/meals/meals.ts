@@ -33,6 +33,44 @@ export const meals = async (app: FastifyInstance) => {
       .send({ meals: parsedMeals })
   })
 
+  app.get('/:id', ROUTE_OPTIONS, async ({ params, user }, reply) => {
+    const { success, error, data } = mealParamsSchema.safeParse(params)
+
+    if (!user) {
+      return reply
+        .status(401)
+        .send({ message: 'Unauthorized' })
+    }
+
+    if (!success) {
+      return reply
+        .status(400)
+        .send({
+          message: 'Invalid request params',
+          issues: error.issues.map(({ path, message }) => ({
+            path: path.join('.'),
+            message
+          }))
+        })
+    }
+
+    const { id } = data
+
+    const meal = await knex('meals')
+      .where({ id })
+      .first()
+
+    if (!meal) {
+      return reply
+        .status(404)
+        .send({ message: 'Meal not found' })
+    }
+
+    return reply
+      .status(200)
+      .send({ meal })
+  })
+
   app.post('/', ROUTE_OPTIONS, async ({ body, user }, reply) => {
     const { success, error, data } = createMealBodySchema.safeParse(body)
 
