@@ -6,6 +6,11 @@ import { app } from '../app.ts'
 
 import { beforeAll, beforeEach, afterAll, describe, it, expect } from 'vitest'
 
+const user = {
+  name: 'John Doe',
+  email: 'john.doe@example.com'
+}
+
 describe('Users', () => {
   beforeAll(async () => {
     await app.ready()
@@ -24,8 +29,8 @@ describe('Users', () => {
     const response = await request(app.server)
       .post('/users')
       .send({
-        name: 'John Doe',
-        email: 'john.doe@example.com'
+        name: user.name,
+        email: user.email
       })
       .expect(201)
 
