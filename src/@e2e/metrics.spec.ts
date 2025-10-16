@@ -11,26 +11,12 @@ const user = {
   email: 'yet.another.john@example.com'
 }
 
-const meals = [
-  {
-    name: 'Meal 1',
-    description: 'Delicious meal',
-    timestamp: new Date(),
-    is_on_diet: true
-  },
-  {
-    name: 'Meal 2',
-    description: 'Delicious meal 2',
-    timestamp: new Date(Date.now() + 24 * 60 * 60 * 1000),
-    is_on_diet: true
-  },
-  {
-    name: 'Meal 3',
-    description: 'Delicious meal 3',
-    timestamp: new Date(Date.now() + 48 * 60 * 60 * 1000),
-    is_on_diet: false
-  },
-]
+const meal = {
+  name: 'Meal 1',
+  description: 'Delicious meal',
+  timestamp: new Date(),
+  is_on_diet: true
+}
 
 describe('Metrics', () => {
   beforeAll(async () => {
@@ -60,7 +46,7 @@ describe('Metrics', () => {
     await request(app.server)
       .post('/meals')
       .set('Cookie', cookies)
-      .send(meals[0])
+      .send(meal)
       .expect(201)
 
     const { body } = await request(app.server)
