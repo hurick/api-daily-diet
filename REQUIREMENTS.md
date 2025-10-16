@@ -16,7 +16,7 @@
 - [x] User can edit a meal (all information can be modified)
 - [x] User can delete a meal
 - [x] User can list all their meals
-- [ ] User can view a single meal details
+- [x] User can view a single meal details
 
 ### Metrics
 - [ ] User can retrieve their metrics:
