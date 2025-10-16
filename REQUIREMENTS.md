@@ -19,18 +19,18 @@
 - [x] User can view a single meal details
 
 ### Metrics
-- [ ] User can retrieve their metrics:
-  - [ ] Total number of registered meals
-  - [ ] Total number of meals within the diet
-  - [ ] Total number of meals outside the diet
-  - [ ] Best sequence of meals within the diet
+- [x] User can retrieve their metrics:
+  - [x] Total number of registered meals
+  - [x] Total number of meals within the diet
+  - [x] Total number of meals outside the diet
+  - [x] Best sequence of meals within the diet
 
 ## Business Rules
 
 - [x] A meal must be associated with a user
 - [x] Users can only manage their own meals
 - [x] All meal fields are required when creating a meal
-- [ ] The best sequence is calculated by consecutive meals within the diet
+- [x] The best sequence is calculated by consecutive meals within the diet
 - [x] Meals must be identified by a unique ID
 - [x] Authentication/identification must persist between requests
 
