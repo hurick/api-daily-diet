@@ -10,7 +10,10 @@ const envConfig: Record<typeof envOptions[number], { path: string }> = {
   production: { path: '.env' }
 }
 
-config(envConfig[process.env.NODE_ENV as keyof typeof envConfig])
+config({
+  ...envConfig[process.env.NODE_ENV as keyof typeof envConfig],
+  quiet: true
+})
 
 const envSchema = z.object({
   NODE_ENV: z.enum(envOptions).default('development'),
