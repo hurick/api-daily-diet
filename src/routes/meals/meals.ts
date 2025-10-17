@@ -3,7 +3,7 @@ import { knex } from '../../database/setup.ts'
 
 import type { FastifyInstance, RouteOptions } from 'fastify'
 
-import { createMealBodySchema, mealParamsSchema } from './schema.ts'
+import { createMealBodySchema, mealParamsSchema, updateMealBodySchema } from './schema.ts'
 
 import { checkSessionId } from '../../middlewares/check-session-id.ts'
 
@@ -109,7 +109,7 @@ export const meals = async (app: FastifyInstance) => {
 
   app.put('/:id', ROUTE_OPTIONS, async ({ params, body, user }, reply) => {
     const { success: pSuccess, error: pError, data: pData } = mealParamsSchema.safeParse(params)
-    const { success: bSuccess, error: bError, data: bData } = createMealBodySchema.safeParse(body)
+    const { success: bSuccess, error: bError, data: bData } = updateMealBodySchema.safeParse(body)
 
     if (!user) {
       return reply

@@ -43,7 +43,7 @@ export const metrics = async (app: FastifyInstance) => {
     }
 
     return reply
-      .status(201)
+      .status(200)
       .send({ metrics })
   })
 }

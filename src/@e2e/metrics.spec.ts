@@ -52,7 +52,7 @@ describe('Metrics', () => {
     const { body } = await request(app.server)
       .get('/metrics/meals')
       .set('Cookie', cookies)
-      .expect(201)
+      .expect(200)
 
     expect(body).toEqual(expect.objectContaining({
       metrics: expect.objectContaining({
